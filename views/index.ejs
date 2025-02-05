@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>사용자 목록</title>
+</head>
+<body>
+  <h1>사용자 목록</h1>
+  <ul>
+    <% users.forEach(user => { %>
+      <li><%= user.name %> - <%= user.email %></li>
+    <% }); %>
+  </ul>
+
+  <h2>새 사용자 추가</h2>
+  <form action="/users/add" method="POST">
+    <input type="text" name="name" placeholder="이름" required>
+    <input type="email" name="email" placeholder="이메일" required>
+    <button type="submit">추가</button>
+  </form>
+</body>
+</html>
